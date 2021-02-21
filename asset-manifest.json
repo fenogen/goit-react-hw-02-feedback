@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/fenogen/goit-react-hw-02-feedback/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/fenogen/goit-react-hw-02-feedback/static/js/main.1bb46f29.chunk.js",
+    "main.js.map": "/fenogen/goit-react-hw-02-feedback/static/js/main.1bb46f29.chunk.js.map",
+    "runtime-main.js": "/fenogen/goit-react-hw-02-feedback/static/js/runtime-main.c7014a7b.js",
+    "runtime-main.js.map": "/fenogen/goit-react-hw-02-feedback/static/js/runtime-main.c7014a7b.js.map",
+    "static/css/2.de71bbd8.chunk.css": "/fenogen/goit-react-hw-02-feedback/static/css/2.de71bbd8.chunk.css",
+    "static/js/2.db74a393.chunk.js": "/fenogen/goit-react-hw-02-feedback/static/js/2.db74a393.chunk.js",
+    "static/js/2.db74a393.chunk.js.map": "/fenogen/goit-react-hw-02-feedback/static/js/2.db74a393.chunk.js.map",
+    "index.html": "/fenogen/goit-react-hw-02-feedback/index.html",
+    "static/css/2.de71bbd8.chunk.css.map": "/fenogen/goit-react-hw-02-feedback/static/css/2.de71bbd8.chunk.css.map",
+    "static/css/main.8c8b27cf.chunk.css.map": "/fenogen/goit-react-hw-02-feedback/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.db74a393.chunk.js.LICENSE.txt": "/fenogen/goit-react-hw-02-feedback/static/js/2.db74a393.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/fenogen/goit-react-hw-02-feedback/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7014a7b.js",
+    "static/css/2.de71bbd8.chunk.css",
+    "static/js/2.db74a393.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.1bb46f29.chunk.js"
+  ]
+}
