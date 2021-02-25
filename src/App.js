@@ -2,6 +2,9 @@
 
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Statistics from './components/Statistics'
+import FeedbackOptions from './components/FeedbackOptions'
+import Section from './components/Section'
 
 export default class App extends Component {
 
@@ -11,6 +14,11 @@ state = {
   bad: 0,
   // total: 0,           //-----> Нужно вынести total
   // positivePerсent: 0,
+}
+
+// -----------------------------> Дополнительные свойства для условия рендера
+defaultState = {
+  total: 0,
 }
   
    fnPlus = (ev) => {
@@ -31,18 +39,15 @@ state = {
   }
 
    fnTotal = () => {
-     const result = this.state.good + this.state.neutral + this.state.bad;
+    const result = this.state.good + this.state.neutral + this.state.bad;
+    this.defaultState.total = result;
     // this.setState({ total: this.state.good + this.state.neutral + this.state.bad})     //----->  не сработает
     return result;
    }
   
    fnPositivePerсent = () => {
     const sum = this.fnTotal();
-    console.log(sum)
     const result = sum ? (this.state.good * 100 / sum) : 0;
-
-    console.log(result)
-    // this.setState({ positivePerсent: this.state.good * 100 / this.state.total })
     return result.toFixed(0);
   }
 
@@ -50,20 +55,40 @@ state = {
     return (
       <div className="">
         <h1>Please leave feedback</h1>
-        <div>
-          <button id="plus" onClick={this.fnPlus}>Good</button>
-          <button id="neutral" onClick={this.fnPlus}>Neutral</button>
-          <button id="bad" onClick={this.fnPlus}>Bad</button>
-        </div>
-        <ul> Statistics
-          <li>Good: {this.state.good}</li>
-          <li>Neutral: {this.state.neutral}</li>
-          <li>Bad: {this.state.bad}</li>
-          <li>Total: {this.fnTotal()}</li>                                               {/*//----->  запустили ф-ю при отрисовке*/}
-          <li>Positive feedback: {this.fnPositivePerсent()} %</li>                       {/*//----->  запустили ф-ю при отрисовке*/}
-          </ul>
+         <FeedbackOptions
+         fnPlus={this.fnPlus}/>
+        <h2 fn={this.fnTotal()}>Statistics</h2>                      {/*Запустили ф-ю подсчета суммы для сработки условия рендера*/}
+        {this.defaultState.total < 1 && <h2>No feedback</h2>}
+        {this.defaultState.total >= 1 && <Statistics 
+         state={this.state}
+         fnTotal={this.fnTotal}
+         fnPositivePerсent={this.fnPositivePerсent}
+          />
+        }
       </div>
     )
   }
 }
+
+// -------------------------------------------------------> Без разбивки на компоненты
+// render() {
+//   return (
+//     <div className="">
+//       <h1>Please leave feedback</h1>
+//       <div>
+//         <button id="plus" onClick={this.fnPlus}>Good</button>
+//         <button id="neutral" onClick={this.fnPlus}>Neutral</button>
+//         <button id="bad" onClick={this.fnPlus}>Bad</button>
+//       </div>
+//        <ul> Statistics
+//         <li>Good: {this.state.good}</li>
+//         <li>Neutral: {this.state.neutral}</li>
+//         <li>Bad: {this.state.bad}</li>
+//         <li>Total: {this.fnTotal()}</li>                                               {/*//----->  запустили ф-ю при отрисовке*/}
+//         <li>Positive feedback: {this.fnPositivePerсent()} %</li>                       {/*//----->  запустили ф-ю при отрисовке*/}
+//       </ul>
+//     </div>
+//   )
+// }
+// }
 
