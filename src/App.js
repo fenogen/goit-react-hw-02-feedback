@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import Statistics from './components/Statistics'
 import FeedbackOptions from './components/FeedbackOptions'
 import Section from './components/Section'
+import "../src/App.css"
 
 export default class App extends Component {
 
@@ -53,8 +54,8 @@ defaultState = {
 
   render() {
     return (
-      <div className="">
-        <h1>Please leave feedback</h1>
+      <div className="section">
+        <h1 className="title">Please leave feedback</h1>
          <FeedbackOptions
          fnPlus={this.fnPlus}/>
         <h2 fn={this.fnTotal()}>Statistics</h2>                      {/*Запустили ф-ю подсчета суммы для сработки условия рендера*/}

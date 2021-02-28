@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 function Statistics({state, fnPositivePerсent, fnTotal}) {
     return (
-        <ul>
-        <li>Good: {state.good}</li>
-        <li>Neutral: {state.neutral}</li>
-        <li>Bad: {state.bad}</li>
-        <li>Total: {fnTotal()}</li>                                               {/*//----->  запустили ф-ю при отрисовке*/}
-        <li>Positive feedback: {fnPositivePerсent()} %</li>                       {/*//----->  запустили ф-ю при отрисовке*/}
+        <ul className="list_statistic">
+        <li className="item">Good: <b>{state.good}</b></li>
+        <li className="item">Neutral: <b>{state.neutral}</b></li>
+        <li className="item">Bad: <b>{state.bad}</b></li>
+        <li className="item">Total: <b>{fnTotal()}</b></li>                                               {/*//----->  запустили ф-ю при отрисовке*/}
+        <li className="item">Positive feedback: <b>{fnPositivePerсent()} %</b></li>                       {/*//----->  запустили ф-ю при отрисовке*/}
         </ul>
     )
 }

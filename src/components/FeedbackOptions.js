@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 function FeedbackOptions({fnPlus}) {
     return (
-        <div>
-          <button id="plus" onClick={fnPlus}>Good</button>
-          <button id="neutral" onClick={fnPlus}>Neutral</button>
-          <button id="bad" onClick={fnPlus}>Bad</button>
+        <div className="flex__button">
+          <button className="button" id="plus" onClick={fnPlus}>Good</button>
+          <button className="button" id="neutral" onClick={fnPlus}>Neutral</button>
+          <button className="button" id="bad" onClick={fnPlus}>Bad</button>
         </div>
     )
 }
